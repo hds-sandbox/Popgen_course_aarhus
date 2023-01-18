@@ -1,0 +1,43 @@
+name: /work/projects/popgen_course_aarhus/Popgen_course_KasperMunch/popgen_au_env
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python
+  - bwa
+  - bcftools
+  - samtools[version='1.6']
+  - ca-certificates
+  - openssl
+  - r-ggplot2
+  - r-dplyr
+  - r-irkernel
+  - certifi
+  - rpy2
+  - ipykernel
+  - minimap2
+  - pandas
+  - r-vcfr
+  - vcftools
+  - cxx-compiler
+  - r-tidyr
+  - bioconductor-snprelate
+  - psmc
+  - ghostscript
+  - gnuplot
+  - bash_kernel
+  - plink
+  - r-data.table
+  - r-gridextra
+  - r-cowplot
+  - numpy
+  - networkx
+  - dash
+  - jupyter-dash
+  - dash-bootstrap-components
+  - dash-core-components
+  - dash-html-components
+  - matplotlib
+  - r-qqman
+  - gcta
+prefix: /work/projects/popgen_course_aarhus/Popgen_course_KasperMunch/popgen_au_env
