@@ -1,0 +1,5 @@
+{"argv": ["/opt/conda/envs/popgen_aarhus/bin/python", "-m", "bash_kernel", "-f", "{connection_file}"], 
+"codemirror_mode": "shell", 
+"display_name": "Bash", 
+"env": {"PATH":"/opt/conda/envs/popgen_aarhus/bin:/opt/conda/envs/popgen_aarhus/lib:$PATH"}, 
+"language": "bash"}
