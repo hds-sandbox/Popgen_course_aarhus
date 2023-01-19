@@ -13,13 +13,13 @@ LABEL software="PopGenomicsCourses" \
 USER 0
 
 #expose port for dash interface
-EXPOSE 8050
+EXPOSE 8850
 
 RUN mkdir -p /usr/Material 
 
 COPY ./Notebooks /usr/Material/Notebooks
 COPY ./Environments /usr/Material/Environments
-#COPY ./Scripts /usr/Material/Scripts
+COPY ./Scripts /usr/Material/Scripts
 
 #download data
 #RUN mkdir -p /usr/Material/Data && \
@@ -84,11 +84,11 @@ RUN ${CONDA_DIR}/envs/popgen_aarhus/bin/python -m ipykernel install --user --nam
     ${CONDA_DIR}/envs/popgen_aarhus/bin/python -m bash_kernel.install
     
 RUN fix-permissions "/home/${NB_USER}" \
-    && ln -s /usr/Material /work/Course_Material
+    && ln -s /usr/Material /home/${NB_USER}/work/Course_Material
 
 
 ### modify kernel files with system variables and fix library for bcftools
-RUN cp ./Course_Material/Environments/kernelBash.json /usr/local/share/jupyter/kernels/bash/kernel.json \
+RUN cp /usr/Material/Environments/kernelBash.json /usr/local/share/jupyter/kernels/bash/kernel.json \
   && ln -s ${CONDA_DIR}/envs/popgen_aarhus/lib/libcrypto.so.3 ${CONDA_DIR}/envs/popgen_aarhus/lib/libcrypto.so.1.0.0
 
 
@@ -99,4 +99,4 @@ RUN jupyter labextension install /usr/Splashscreen/
 
 USER 1000
 
-WORKDIR /work/
+WORKDIR /home/${NB_USER}/work/
